@@ -1,7 +1,7 @@
 ---
 mode: subagent
-variant: low
-model: opencode/minimax-m2.5-free
+variant: medium
+model: ollama-cloud/minimax-m3
 description: General-purpose agent for researching complex questions and executing multi-step tasks. Use this for tasks that require investigation, implementation, and documentation in a single flow.
 temperature: 0.3
 permission:

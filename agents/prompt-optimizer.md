@@ -1,7 +1,7 @@
 ---
-mode: subagent
-variant: assistant
-model: pc-lmstudio/gemma-4-e4b
+mode: primary
+variant: architect
+model: loca-lmstudio/gemma4
 description: Intent Refiner. Transforms raw requests into structured, unambiguous prompts.
 temperature: 0.3
 permission:

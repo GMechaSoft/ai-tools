@@ -1,7 +1,7 @@
 ---
 mode: primary
-variant: high
-model: google/gemini-3.1-pro-preview
+variant: max
+model: deepseek/deepseek-v4-pro
 description: Technical leader and global orchestrator. Responsible for enforcing the Atomic Cycle (Design -> ADR -> Implementation).
 temperature: 0.5
 permission:

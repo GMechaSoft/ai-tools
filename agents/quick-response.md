@@ -1,7 +1,7 @@
 ---
 mode: primary
 variant: assistant
-model: pc-lmstudio/gemma-4-e4b
+model: loca-lmstudio/gemma4
 description: Assistant for quick inquiries, low-latency support, and brief conceptual explanations.
 temperature: 0.7
 permission:

@@ -1,7 +1,7 @@
 ---
 mode: subagent
-variant: high
-model: google/gemini-3.1-pro-preview
+variant: max
+model: deepseek/deepseek-v4-pro
 description: Macro-architecture and technical design auditor. Foundation for ADRs.
 temperature: 0.4
 permission:
