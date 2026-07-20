@@ -1,9 +1,10 @@
 ---
-name: handoff-test
-description: "Use this skill whenever the user wants to log off, transition their work, switch branches, or document the current state of a development task for another engineer or a future AI session. Triggers include requests like 'create a handoff', 'generate handoff.md', 'prepare the transfer', 'wrap up my day', or 'document what failed'. This skill inspects the repository status via git tools, infers the objective from recent context, and generates a structured technical document capturing current status, modified files, completed changes, failures/blockers, and prioritized upcoming tasks. Do NOT use for general project readme files, API documentation, or code comments unrelated to context handover."
+name: custom-custom-handoff
+description: Use this skill whenever the user wants to log off, transition their work, switch branches, or document the current state of a development task for another engineer or a future AI session. Triggers include requests like 'create a handoff', 'generate handoff.md', 'prepare the transfer', 'wrap up my day', or 'document what failed'. This skill inspects the repository status via git tools, infers the objective from recent context, and generates a structured technical document capturing current status, modified files, completed changes, failures/blockers, and prioritized upcoming tasks. Do NOT use for general project readme files, API documentation, or code comments unrelated to context handover.
 ---
 
-# Handoff-test creation, documentation, and engineering state transfer
+
+# Handoff creation, documentation, and engineering state transfer
 
 ## Overview
 

@@ -1,7 +1,7 @@
 ---
 mode: subagent
-variant: developer
-model: ollama-cloud/qwen3-coder-next
+variant: medium
+model: deepseek/deepseek-v4-pro
 description: Expert in technical implementation. Writes code based strictly on ADRs.
 temperature: 0.2
 permission:

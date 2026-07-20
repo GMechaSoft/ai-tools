@@ -1,5 +1,5 @@
 ---
-name: create-user-story
+name: custom-create-user-story
 description: "Activate when the user requests to create a user story (US), write acceptance criteria in GWT format (Given/When/Then), or generate a file in docs/stories/US-####.md."
 ---
 

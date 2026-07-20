@@ -1,5 +1,5 @@
 ---
-name: skill-creator
+name: custom-skill-creator
 description: "Activate when the user requests to create, optimize, or structure a new skill or a set of reusable instructions (.md) for AI agents."
 ---
 
@@ -22,7 +22,11 @@ This skill transforms abstract requests, long prompts, or repetitive workflows i
 * **Output Format**: Specify the visual structure (Markdown, JSON, tables) the response will adopt.
 * **Constraints**: List operational limits and critical errors the agent must avoid.
 
-### 4. Context Optimization
+### 4. File Creation
+* Create the skill file in the `~/.agents/skills/[skill-name]/SKILL.md` directory.
+* This is the standard location where new skills are stored and automatically loaded by AI agents.
+
+### 5. Context Optimization
 * Review that instructions do not use unnecessary absolute uppercase (e.g., avoid "ALWAYS", "NEVER").
 * Briefly explain the "why" behind critical rules to improve model reasoning.
 * If the process requires complex mathematical calculations, suggest creating an associated `scripts/` subfolder.
@@ -32,10 +36,9 @@ The final result must be delivered strictly within a Markdown code block with th
 
 ```markdown
 ---
-name: [skill-name]
+name: custom-[skill-name]
 description: "[Clear description of the skill trigger]"
 ---
-
 ## 📌 Overview
 ...
 

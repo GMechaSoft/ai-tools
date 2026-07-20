@@ -1,3 +1,5 @@
 **/microsoft-foundry
 **/.skill-lock.json
 opencode/agents
+skills/*
+!skills/custom-**

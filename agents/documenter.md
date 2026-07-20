@@ -1,7 +1,7 @@
 ---
 mode: subagent
 variant: low
-model: opencode/minimax-m2.5-free
+model: opencode/deepseek-v4-flash-free
 description: Guardian of the docs/ folder and technical documentation standards.
 temperature: 0.3
 permission:
