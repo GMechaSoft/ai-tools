@@ -8,7 +8,7 @@ description: Use this skill whenever the user wants to log off, transition their
 
 ## Overview
 
-A `handoff.md` file is an asynchronous context-transfer document in Markdown format designed to pass explicit engineering context between developers or AI sessions without information loss.
+A `handoff.md` file is an asynchronous context-transfer document in Markdown format designed to pass explicit engineering context between developers or AI sessions without information loss. Each handoff is a point-in-time snapshot: the next working session reads it, resumes the pending tasks, and produces a fresh handoff that supersedes it.
 
 ## Quick Reference
 
@@ -17,6 +17,7 @@ A `handoff.md` file is an asynchronous context-transfer document in Markdown for
 |------|--------------------|
 | Read current git status | `git status -s` |
 | Inspect precise file diffs | `git diff --name-only` or `git diff --name-only HEAD~1 HEAD` |
+| Get the header timestamp | `Get-Date -Format "yyyy-MM-dd HH:mm"` |
 | Generate the handoff file | Write to root directory as `handoff.md` |
 
 ### Inspecting Repository State
@@ -35,6 +36,11 @@ git diff
 git diff HEAD~1 HEAD
 ```
 
+```powershell
+# Get the date and time to stamp the handoff header
+Get-Date -Format "yyyy-MM-dd HH:mm"
+```
+
 ---
 
 ## Creating the Handoff Document
@@ -46,7 +52,7 @@ Generate the `handoff.md` file at the root level of the workspace. Fill in the s
 ```markdown
 # 🚀 Development Handoff: {task_name}
 
-**Date:** {current_date}  
+**Date:** {current_datetime}  
 **Repository Branch:** {current_git_branch}
 
 ---
@@ -68,11 +74,13 @@ Generate the `handoff.md` file at the root level of the workspace. Fill in the s
 - **Attempt:** {Alternative approach or logic that was tested}
   - *Result:* Failed due to {console error, bug, or exception} because {short technical explanation of the failure}.
 
-## 🔮 6. Next Steps (Upcoming Tasks)
-1. 🔲 {Immediate technical step to resume or unblock development}.
-2. 🔲 {Next validation, refactor, or integration required}.
-3. 🔲 {Automated test or final acceptance criteria needed before Merge}.
+## 🔮 6. Next Steps (Pending Tasks)
+1. {Immediate technical step to resume or unblock development}.
+2. {Next validation, refactor, or integration required}.
+3. {Automated test or final acceptance criteria needed before Merge}.
 ```
+
+Fill in `{current_datetime}` exactly with the output of `Get-Date -Format "yyyy-MM-dd HH:mm"` obtained at the moment the file is written, so each handoff snapshot is traceable to the minute.
 
 ---
 
@@ -93,5 +101,6 @@ To ensure high density and complete utility for the receiving engineer, follow t
 - Provide a concise architectural root cause if known (e.g., *cors mismatch*, *missing environmental variable key*, or *database lock constraint*).
 
 ### Next Steps Structure
-- **Keep tasks short and executable:** Each list item in the next steps section must be exactly one short, actionable fragment starting with a checkbox square (`🔲`).
+- **Plain numbered list, no checkboxes:** Next steps must be a regular numbered list without `🔲` marks or `- [ ]` boxes. Each item is exactly one short, actionable fragment.
+- **Why:** A handoff is a point-in-time snapshot, not a persistent tracker. The next session reads it, resumes the pending tasks, and writes a new handoff that supersedes it — checking off boxes in an old file would only produce a stale record.
 - Order them chronologically by immediate priority so the receiving agent can begin work immediately on task item 1.
